@@ -45,8 +45,8 @@ copy) against the corresponding drive letter and unmounting the drive again.
 Using these function against multiple collections reduce the time severely
 compared to running these commands manually.
 
-The other purpose of the scripts is to quickly jumpt through the available
-plugins or KapeFiles using the tab-completion support and to be able to print
+The other purpose of the scripts is to quickly jump through the available
+plugins or KAPE files using the tab-completion support and to be able to print
 the content of the files to inspect those directly in the shell.
 
 Important note: These scripts do only provide a subset of KAPE's and
