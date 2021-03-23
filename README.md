@@ -1,21 +1,26 @@
-# Forensic Helper Scripts for KAPE and RegRipper
+# Forensic helper scripts for KAPE and RegRipper
 
-Invoke-Forensics provides PowerShell scripts to simplify working with KAPE evidence files
-(unzipping and mounting VHDX images), provide functions to run KAPE against 
-or getting files from multiple KAPE images in one command, provide
-tab-completion support for
-[RegRipper](https://github.com/keydet89/RegRipper3.0)'s
-[plugins](https://github.com/keydet89/RegRipper3.0/tree/master/plugins) or
-[KAPE](https://www.kroll.com/en/services/cyber-risk/incident-response-litigation-support/kroll-artifact-parser-extractor-kape)'s
-[targets and modules (KapeFiles)](https://github.com/EricZimmerman/KapeFiles)
-and provide a powerful search function to quickly find KAPE files based on a
-given filter. Additionally, the functions allow showing the content of the
-given plugin or KapeFile for convenience.
+If you use KAPE or RegRipper for forensic analysis, then Invoke-Forensics could help you by providing PowerShell commands to simplify working with these tools. They speed up your work when
+* you deal with multiple evidence files in that commands are provided for
+    unzipping and mounting VHDX images and run KAPE against them or let you
+    getting files from them.
+* you are tired of searching for the correct name to provide to these tools in
+  that the commands have tab-completion support which lets you quickly find
+  available plugins or KAPE targets and modules for
+  [RegRipper](https://github.com/keydet89/RegRipper3.0)'s
+  [plugins](https://github.com/keydet89/RegRipper3.0/tree/master/plugins) or
+  [KAPE](https://www.kroll.com/en/services/cyber-risk/incident-response-litigation-support/kroll-artifact-parser-extractor-kape)'s
+  [targets and modules
+  (KapeFiles)](https://github.com/EricZimmerman/KapeFiles) ("how was that
+  module name again?"), run them or let you show the content of the files for
+  inspection
+* you need to search for specific KAPE files based on a given filter ("Is
+  there already a powershell console target available?")
 
 ***
 <!-- vim-markdown-toc GFM -->
 
-* [What do these scripts provide?](#what-do-these-scripts-provide)
+* [What exactly do these scripts provide?](#what-exactly-do-these-scripts-provide)
 * [Requirements](#requirements)
 * [Functions](#functions)
 * [Usage](#usage)
@@ -36,14 +41,14 @@ given plugin or KapeFile for convenience.
 <!-- vim-markdown-toc -->
 ***
 
-## What do these scripts provide?
+## What exactly do these scripts provide?
 
 The main advantage using the scripts is that they allow running KAPE against
 or collecting files from multiple collected KAPE images in one command which
-includes unzipping, mounting the VHDX and running the command (KAPE or file
-copy) against the corresponding drive letter and unmounting the drive again.
-Using these function against multiple collections reduce the time severely
-compared to running these commands manually.
+includes unzipping, mounting the VHDX and running the command (KAPE itself or
+file copy) against the corresponding drive letter and unmounting the VHDX image
+again. Using these function against multiple collections reduce the time
+severely compared to running these commands manually.
 
 The other purpose of the scripts is to quickly jump through the available
 plugins or KAPE files using the tab-completion support and to be able to print
