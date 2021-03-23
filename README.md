@@ -6,8 +6,7 @@ If you use KAPE or RegRipper for forensic analysis, then Invoke-Forensics could 
     getting files from them.
 * you are tired of searching for the correct name to provide to these tools in
   that the commands have tab-completion support which lets you quickly find
-  available plugins or KAPE targets and modules for
-  [RegRipper](https://github.com/keydet89/RegRipper3.0)'s
+  available [RegRipper](https://github.com/keydet89/RegRipper3.0)
   [plugins](https://github.com/keydet89/RegRipper3.0/tree/master/plugins) or
   [KAPE](https://www.kroll.com/en/services/cyber-risk/incident-response-litigation-support/kroll-artifact-parser-extractor-kape)'s
   [targets and modules
@@ -36,7 +35,6 @@ If you use KAPE or RegRipper for forensic analysis, then Invoke-Forensics could 
 * [Changelog](#changelog)
     * [[Unreleased]](#unreleased)
     * [[0.1.0] - 2021-03-22](#010---2021-03-22)
-        * [Added](#added)
 
 <!-- vim-markdown-toc -->
 ***
@@ -355,9 +353,25 @@ The format is based on [Keep a Changelog](http://kgbeepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ### [Unreleased]
+<!--
+
+**Added**
+
+**Changed**
+
+**Fixed**
+
+**Security**
+
+**Deprecated**
+
+**Removed**
+-->
 
 ### [0.1.0] - 2021-03-22
-#### Added
+
+**Added**
+
 * Add initial version of the helper scripts, allow working with evidence ZIP
    files, VHDX images, running KAPE against multiple ZIP or VHDX files, search
    for targets or modules using different filters, run RegRipper commands, all
