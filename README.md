@@ -75,7 +75,8 @@ The wrapper scripts provide:
 * **Search for KAPE files based on keywords in a KAPE field (e.g. Description,
     FileMask, ...) or the whole file** and print either a short list with the
     name and the location, the file content or a file listing for further
-    processing in PowerShell (`Search-KapeFile`).
+    processing in PowerShell (`Search-KapeFile`). gkape.exe could also be used 
+    for searching targets or modules.
 * **Printing the content of plugins or artifact files** without the need for
     navigating into subfolders (Invoke-Kape*, Search-KapeFile and
     Invoke-RegRipper functions using `-Print`).
