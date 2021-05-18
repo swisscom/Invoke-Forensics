@@ -9,12 +9,12 @@ If you use KAPE or RegRipper for forensic analysis, then Invoke-Forensics could 
   available [RegRipper](https://github.com/keydet89/RegRipper3.0)
   [plugins](https://github.com/keydet89/RegRipper3.0/tree/master/plugins) or
   [KAPE](https://www.kroll.com/en/services/cyber-risk/incident-response-litigation-support/kroll-artifact-parser-extractor-kape)'s
-  [targets and modules
-  (KapeFiles)](https://github.com/EricZimmerman/KapeFiles) ("how was that
-  module name again?"), run them or let you show the content of the files for
+  [Targets and Modules
+  (KapeFiles)](https://github.com/EricZimmerman/KapeFiles) ("what was that
+  Module name again?"), run them or let you show the content of the files for
   inspection
 * you need to search for specific KAPE files based on a given filter ("Is
-  there already a powershell console target available?")
+  there already a PowerShell console Target available?")
 
 ***
 <!-- vim-markdown-toc GFM -->
@@ -54,9 +54,9 @@ the content of the files to inspect those directly in the shell.
 
 Important note: These scripts do only provide a subset of KAPE's and
 RegRippers arguments. For more specific needs use the binaries directly to be
-able to use all the available options, make a [pull
-request](https://github.com/swisscom/Invoke-Forensics/pulls) or file an
-[issue](https://github.com/swisscom/Invoke-Forensics/issues) to request the
+able to use all the available options, make a [Pull
+Request](https://github.com/swisscom/Invoke-Forensics/pulls) or file an
+[Issue](https://github.com/swisscom/Invoke-Forensics/issues) to request the
 inclusion of further arguments.
 
 The wrapper scripts provide:
@@ -76,7 +76,7 @@ The wrapper scripts provide:
     FileMask, ...) or the whole file** and print either a short list with the
     name and the location, the file content or a file listing for further
     processing in PowerShell (`Search-KapeFile`). gkape.exe could also be used 
-    for searching targets or modules.
+    for searching Targets or Modules.
 * **Printing the content of plugins or artifact files** without the need for
     navigating into subfolders (Invoke-Kape*, Search-KapeFile and
     Invoke-RegRipper functions using `-Print`).
@@ -100,7 +100,7 @@ PS> Enable-WindowsOptionalFeature -FeatureName "Hyper-V Module for Windows Power
 
 ## Functions
 
-* Invoke-Kape - _Run KAPE with given targets or modules_
+* Invoke-Kape - _Run KAPE with given Targets or Modules_
 * Invoke-KapeOnMultipleImages - _Run KAPE against multiple VHDX containers,
     including unzipping evidence ZIP and VHDX zip and mounting VHDX files first_
 * Invoke-KapeFileCollection - _Collect files based on a given pattern from VHDX containers_
@@ -130,7 +130,7 @@ _Change into KAPE's directory first._
 
 Run a KAPE command or show the content of a target or module file. The target and module parameters have tab-completion support.
 
-``` powershell
+``` PowerShell
 # List all targets which starts with an 'a' in the name and print the one which was choosen
 Invoke-Kape -Target a<ctrl-space> -Print
 
