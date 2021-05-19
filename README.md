@@ -116,7 +116,7 @@ PS> Enable-WindowsOptionalFeature -FeatureName "Hyper-V Module for Windows Power
 2. Load scripts into PowerShell
     ``` powershell
     # Load both RegRipper and KAPE functions
-    . .\Invoke-Forensics\Invoke-Forensic.ps1
+    . .\Invoke-Forensics\Invoke-Forensics.ps1
     # Load KAPE functions
     . .\Invoke-Forensics\Invoke-Kape.ps1
     # Load RegRipper functions
