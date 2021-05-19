@@ -9,12 +9,12 @@ If you use KAPE or RegRipper for forensic analysis, then Invoke-Forensics could 
   available [RegRipper](https://github.com/keydet89/RegRipper3.0)
   [plugins](https://github.com/keydet89/RegRipper3.0/tree/master/plugins) or
   [KAPE](https://www.kroll.com/en/services/cyber-risk/incident-response-litigation-support/kroll-artifact-parser-extractor-kape)'s
-  [targets and modules
-  (KapeFiles)](https://github.com/EricZimmerman/KapeFiles) ("how was that
-  module name again?"), run them or let you show the content of the files for
+  [Targets and Modules
+  (KapeFiles)](https://github.com/EricZimmerman/KapeFiles) ("what was that
+  Module name again?"), run them or let you show the content of the files for
   inspection
 * you need to search for specific KAPE files based on a given filter ("Is
-  there already a powershell console target available?")
+  there already a PowerShell console Target available?")
 
 ***
 <!-- vim-markdown-toc GFM -->
@@ -54,9 +54,9 @@ the content of the files to inspect those directly in the shell.
 
 Important note: These scripts do only provide a subset of KAPE's and
 RegRippers arguments. For more specific needs use the binaries directly to be
-able to use all the available options, make a [pull
-request](https://github.com/swisscom/Invoke-Forensics/pulls) or file an
-[issue](https://github.com/swisscom/Invoke-Forensics/issues) to request the
+able to use all the available options, make a [Pull
+Request](https://github.com/swisscom/Invoke-Forensics/pulls) or file an
+[Issue](https://github.com/swisscom/Invoke-Forensics/issues) to request the
 inclusion of further arguments.
 
 The wrapper scripts provide:
@@ -64,7 +64,7 @@ The wrapper scripts provide:
     them without the need to navigate into subfolders.
 * **Run KAPE against one or multiple evidence ZIP files or VHDX images** which
     includes unzipping evidence ZIP files, mounting VHDX images and run KAPE
-    with given modules against those (`Invoke-KapeOnMultipleImages`).
+    with given Modules against those (`Invoke-KapeOnMultipleImages`).
 * **Copy files from one or multiple evidence ZIP files or VHDX images** which
     includes unzipping evidence ZIP files, mounting VHDX images and run a
     copy command with a given (regex) pattern against those
@@ -76,7 +76,7 @@ The wrapper scripts provide:
     FileMask, ...) or the whole file** and print either a short list with the
     name and the location, the file content or a file listing for further
     processing in PowerShell (`Search-KapeFile`). gkape.exe could also be used 
-    for searching targets or modules.
+    for searching Targets or Modules.
 * **Printing the content of plugins or artifact files** without the need for
     navigating into subfolders (Invoke-Kape*, Search-KapeFile and
     Invoke-RegRipper functions using `-Print`).
@@ -100,7 +100,7 @@ PS> Enable-WindowsOptionalFeature -FeatureName "Hyper-V Module for Windows Power
 
 ## Functions
 
-* Invoke-Kape - _Run KAPE with given targets or modules_
+* Invoke-Kape - _Run KAPE with given Targets or Modules_
 * Invoke-KapeOnMultipleImages - _Run KAPE against multiple VHDX containers,
     including unzipping evidence ZIP and VHDX zip and mounting VHDX files first_
 * Invoke-KapeFileCollection - _Collect files based on a given pattern from VHDX containers_
@@ -116,7 +116,7 @@ PS> Enable-WindowsOptionalFeature -FeatureName "Hyper-V Module for Windows Power
 2. Load scripts into PowerShell
     ``` powershell
     # Load both RegRipper and KAPE functions
-    . .\Invoke-Forensics\Invoke-Forensic.ps1
+    . .\Invoke-Forensics\Invoke-Forensics.ps1
     # Load KAPE functions
     . .\Invoke-Forensics\Invoke-Kape.ps1
     # Load RegRipper functions
@@ -128,16 +128,16 @@ PS> Enable-WindowsOptionalFeature -FeatureName "Hyper-V Module for Windows Power
 
 _Change into KAPE's directory first._
 
-Run a KAPE command or show the content of a target or module file. The target and module parameters have tab-completion support.
+Run a KAPE command or show the content of a Target or Module file. The Target and Module parameters have tab-completion support.
 
-``` powershell
-# List all targets which starts with an 'a' in the name and print the one which was choosen
+``` PowerShell
+# List all Targets which starts with an 'a' in the name and print the one which was choosen
 Invoke-Kape -Target a<ctrl-space> -Print
 
-# Jump through all targets which starts with an 'a' in the name and print the content
+# Jump through all Targets which starts with an 'a' in the name and print the content
 Invoke-Kape -Print -Target a<tab>
 
-# Example for printing amcache target
+# Example for printing Amcache Target
 PS> Invoke-Kape -Target Amcache -print
 Description: Amcache.hve
 Author: Eric Zimmerman
@@ -146,16 +146,16 @@ Id: 13ba1e33-4899-4843-adf1-c7e6b20d759a
 RecreateDirectories: true
 ...
 
-# Jump through all remaining modules besides AmcacheParser and print the selected
+# Jump through all remaining Modules besides AmcacheParser and print the selected
 Invoke-Kape -Print -Target Amcache -Module AmcacheParser,<tab>
 
-# Invoke KAPE using the target Amcache
+# Invoke KAPE using the Target Amcache
 Invoke-Kape -tsource C: -tdest C:\temp\ -Target Amcache
 
-# Invoke KAPE using the module AmcacheParser
+# Invoke KAPE using the Module AmcacheParser
 Invoke-Kape -msource C:\temp -mdest C:\temp\ -Module AmcacheParser
 
-# Invoke KAPE using two modules
+# Invoke KAPE using two Modules
 invoke-kape -msource C:\WindowsTimelineTest -mdest C:\WindowsTimelineTestTemp -Module SQLECmd,WxTCmd
 ```
 
@@ -169,7 +169,7 @@ The function provides the following:
 * Extracts the hostname from the path to use it in KAPE commands and for output folder name
 * Loop over all VHDX files
   * Mounts VHDX file and provide the drive letter to the KAPE command
-  * Run KAPE with the given modules (`-Module` has tab-completion support for module names)
+  * Run KAPE with the given Modules (`-Module` has tab-completion support for Module names)
   * Unmounts the VHDX file
 
 Sample directory and file structure:
@@ -215,7 +215,7 @@ PS> Invoke-KapeFileCollection -KapeEvidenceFolder C:\kape-output\ -TOutPattern *
 
 ### Search-KapeFile
 
-Search through all module and target files, either by pattern in a specific
+Search through all Target and Module files, either by pattern in a specific
 field or the whole file.
 
 Basic usage, there is a generic `-Filter` parameter to search the whole file
@@ -265,7 +265,7 @@ Thunderbird.tkape .\Targets\Apps\Thunderbird.tkape
 
 ### Invoke-KapeUnpack
 
-Unzip evidence output ZIP file and then unzip the VHDX zip file inside the targets folder.
+Unzip evidence output ZIP file and then unzip the VHDX zip file inside the Targets folder.
 
 ``` powershell
 PS> Invoke-KapeUnpack -Path C:\kape-files\ -TOutPattern *\tout -Verbose
@@ -375,6 +375,6 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 * Add initial version of the helper scripts, allow working with evidence ZIP
    files, VHDX images, running KAPE against multiple ZIP or VHDX files, search
-   for targets or modules using different filters, run RegRipper commands, all
+   for Targets or Modules using different filters, run RegRipper commands, all
    the commands support tab-completion for RegRipper's plugins and KAPE's
-   targets and modules.
+   Targets and Modules.
