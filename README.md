@@ -354,11 +354,13 @@ The format is based on [Keep a Changelog](http://kgbeepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ### [Unreleased]
+
+**Changed**
+* Rename Invoke-Forensic.ps1 to Invoke-Forensics.ps1
+
 <!--
 
 **Added**
-
-**Changed**
 
 **Fixed**
 
