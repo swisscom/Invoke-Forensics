@@ -128,7 +128,7 @@ PS> Enable-WindowsOptionalFeature -FeatureName "Hyper-V Module for Windows Power
 
 _Change into KAPE's directory first._
 
-Run a KAPE command or show the content of a Target or Module file. The Target and Module parameters have tab-completion support.
+Run a KAPE command or show the content of a Target or Module file. The Target and Module parameters have tab-completion support. You can pass module variables with `-mvars` similar as it is used with KAPE, see [KAPE's doc](https://ericzimmerman.github.io/KapeDocs/#!Pages\3.-Using-KAPE.md#mvars).
 
 ``` PowerShell
 # List all Targets which starts with an 'a' in the name and print the one which was choosen
